@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+
+<beans   >
+   <bean id="hello" class="com.karthik.SpringDemo.SpringExample12.HelloWorld">
+      <property name="message" value="Hello World!"/>
+   </bean>
+<bean id="customHandler" class="com.karthik.SpringDemo.SpringExample13.CustomEventHandler"></bean>
+<bean id="customPublisher" class="com.karthik.SpringDemo.SpringExample13.CustomEventPublisher"></bean>
+
+
+</beans>

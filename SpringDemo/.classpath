@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Spring"/>
+	<classpathentry kind="lib" path="E:/jar files/commons-logging-1.2/commons-logging-1.2.jar"/>
+	<classpathentry kind="lib" path="E:/jar files/commons-logging-1.2/commons-logging-1.2-javadoc.jar"/>
+	<classpathentry kind="lib" path="E:/jar files/spring-framework-4.2.6.RELEASE/asm-3.1.jar"/>
+	<classpathentry kind="lib" path="E:/jar files/spring-framework-4.2.6.RELEASE/cglib-2.2.jar"/>
+	<classpathentry kind="lib" path="E:/jar files/spring-framework-4.2.6.RELEASE/aopalliance-.jar"/>
+	<classpathentry kind="lib" path="E:/jar files/spring-framework-4.2.6.RELEASE/aspectj-1.6.9.jar"/>
+	<classpathentry kind="lib" path="E:/jar files/spring-framework-4.2.6.RELEASE/aspectjrt.jar"/>
+	<classpathentry kind="lib" path="E:/jar files/spring-framework-4.2.6.RELEASE/aspectj-weaver.jar"/>
+	<classpathentry kind="lib" path="E:/jar files/mysql-connector-java-5.1.38-bin.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/log4j"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

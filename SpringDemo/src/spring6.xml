@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<!-- we can add init and destroy globally -->
+<!--  <beans  default-init-method="myInit" default-destroy-method="myDestroy" > -->
+<beans  default-init-method="myInit" default-destroy-method="myDestroy" >
+<!-- for the first method implements -->
+	<bean id="triangle" class="com.karthik.SpringDemo.SpringExample6.Triangle" >
+		<property name="pointA" ref="zeroPoint"></property>
+		<property name="pointB" ref="leftPoint"></property>
+		<property name="pointC" ref="rightPoint"></property>
+	</bean>
+	
+		<bean id="triangle1" class="com.karthik.SpringDemo.SpringExample6.Triangle" init-method="myInit" destroy-method="myDestroy">
+		<property name="pointA" ref="zeroPoint"></property>
+		<property name="pointB" ref="leftPoint"></property>
+		<property name="pointC" ref="rightPoint"></property>
+	</bean>
+	<bean id="zeroPoint" class="com.karthik.SpringDemo.SpringExample6.Point">
+		<property name="x" value="0"></property>
+		<property name="y" value="0"></property>
+	</bean>
+
+	<bean id="leftPoint" class="com.karthik.SpringDemo.SpringExample6.Point">
+		<property name="x" value="20"></property>
+		<property name="y" value="0"></property>
+	</bean>
+
+	<bean id="rightPoint" class="com.karthik.SpringDemo.SpringExample6.Point">
+		<property name="x" value="-20"></property>
+		<property name="y" value="0"></property>
+	</bean>
+
+</beans>

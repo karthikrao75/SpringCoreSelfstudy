@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+
+<beans>
+<!-- setter injection -->
+<bean id="triangle" class="com.karthik.SpringDemo.SpringExample1.Triangle">
+<property name="type" value="Equilateral"></property>
+</bean> 
+
+<!--construction injection-->
+<bean id="triangle1" class="com.karthik.SpringDemo.SpringExample1.Triangle">
+<constructor-arg value="My own triangle"></constructor-arg>
+</bean>
+
+<!-- when using constructor with more then one argument it is better to use index of that argument -->
+<bean id="triangle2" class="com.karthik.SpringDemo.SpringExample1.Triangle">
+<constructor-arg index="0" value="un-equal triangle"></constructor-arg>
+<constructor-arg index="1" value="20"></constructor-arg>
+</bean>
+
+<!-- when there is a over loaded constructor with same number of args, it is better to use type of argument  -->
+<bean id="triangle3" class="com.karthik.SpringDemo.SpringExample1.Triangle">
+<constructor-arg type="int" value="10"></constructor-arg>
+</bean>
+</beans>

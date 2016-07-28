@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans>
+	<bean id="triangle" class="com.karthik.SpringDemo.SpringExample2.Triangle" scope="prototype">
+		<property name="pointA" ref="zeroPoint"></property>
+		<property name="pointB" ref="leftPoint"></property>
+		<!-- idref will double check if the id is present or not, check on it -->
+		<property name="pointC" ref="rightPoint"></property>
+	</bean>
+	<bean id="zeroPoint" class="com.karthik.SpringDemo.SpringExample2.Point">
+		<property name="x" value="0"></property>
+		<property name="y" value="0"></property>
+	</bean>
+
+	<bean id="leftPoint" class="com.karthik.SpringDemo.SpringExample2.Point">
+		<property name="x" value="20"></property>
+		<property name="y" value="0"></property>
+	</bean>
+
+	<bean id="rightPoint" class="com.karthik.SpringDemo.SpringExample2.Point">
+		<property name="x" value="-20"></property>
+		<property name="y" value="0"></property>
+	</bean>
+
+	<!-- Inner bean -->
+	<!-- Inner bean used when that bean is commonly used in that bean, the inner 
+		bean will be isolated from outside and can be used only by the outer bean 
+		hence id tag is removed from inner bean -->
+	<bean id="triangle1" class="com.karthik.SpringDemo.SpringExample2.Triangle">
+		<property name="pointA">
+			<bean class="com.karthik.SpringDemo.SpringExample2.Point">
+				<property name="x" value="0"></property>
+				<property name="y" value="0"></property>
+			</bean>
+		</property>
+		<property name="pointB" ref="leftPoint"></property>
+		<property name="pointC" ref="rightPoint"></property>
+	</bean>
+
+	<alias name="triangle" alias="alias-triangle" />
+	
+	
+	<!-- autowire by name, for this id name should be same as attribute name  -->
+		<bean id="pointA" class="com.karthik.SpringDemo.SpringExample2.Point">
+		<property name="x" value="0"></property>
+		<property name="y" value="0"></property>
+	</bean>
+
+	<bean id="pointB" class="com.karthik.SpringDemo.SpringExample2.Point">
+		<property name="x" value="20"></property>
+		<property name="y" value="0"></property>
+	</bean>
+
+	<bean id="pointC" class="com.karthik.SpringDemo.SpringExample2.Point">
+		<property name="x" value="-20"></property>
+		<property name="y" value="0"></property>
+	</bean>
+	<!-- byType -->
+	<!-- constructor -->
+	<!-- autodetect -->
+		<bean id="triangle3" class="com.karthik.SpringDemo.SpringExample2.Triangle" autowire="byName">
+	</bean>
+</beans>
