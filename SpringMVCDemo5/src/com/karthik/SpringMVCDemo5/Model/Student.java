@@ -14,6 +14,8 @@ import javax.validation.constraints.Size;
 import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.NotEmpty;
 
+import com.karthik.SpringMVCDemo5.CustValidator.IsValidHobby;
+
 public class Student {
 
 	// @Size(min =5, max =10,message="Student name should be minimum of {min}
@@ -33,6 +35,7 @@ public class Student {
 	@NotNull
 	private Date dateOfJoining;
 	@NotEmpty
+	@IsValidHobby(IsValidHobbies="music|cricket|football")
 	private String studentHobby;
 	private Address address;
 	private List<String> courses;
