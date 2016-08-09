@@ -1,5 +1,6 @@
 package com.karthik.SpringMVCDemo5.Controller;
 
+import java.io.IOException;
 import java.sql.Date;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -14,6 +15,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -44,8 +46,15 @@ public class UserController {
 		binder.registerCustomEditor(String.class, "studentName", new StudentNameEditer() );
 	}
 	@RequestMapping(value = "/admissionForm.html", method = RequestMethod.GET)
-	public ModelAndView getAdmissionForm() {
-		return new ModelAndView("AdmissionForm");
+	public ModelAndView getAdmissionForm() throws IOException {
+		String exception="Null_Pointer";
+		ModelAndView modelAndView=null;
+		if(exception.equalsIgnoreCase("Null_Pointer")){
+
+			throw new IOException();
+		}
+		modelAndView=new ModelAndView("AdmissionForm");
+		return modelAndView;
 	}
 
 	@RequestMapping(value = "/submitForm.html", method = RequestMethod.POST)
@@ -61,4 +70,11 @@ public class UserController {
 		ModelAndView andView = new ModelAndView("AdmissionSuccess");
 		return andView;
 	}
+	
+	@ExceptionHandler(value=NullPointerException.class)
+	public String handleNullPointerException(Exception exception){
+		
+		return "NullPointerException";
+	}
+
 }

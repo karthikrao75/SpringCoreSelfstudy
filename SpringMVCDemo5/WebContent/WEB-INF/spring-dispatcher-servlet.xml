@@ -9,7 +9,23 @@
     http://www.springframework.org/schema/mvc
     http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 	<context:component-scan base-package="com.karthik.SpringMVCDemo5.Controller"></context:component-scan>
-	<mvc:annotation-driven/>
+	<mvc:annotation-driven />
+	<mvc:resources location="/resources/**" mapping="/WEB-INF/"></mvc:resources>
+	<mvc:interceptors>
+		<bean class="org.springframework.web.servlet.theme.ThemeChangeInterceptor">
+			<property name="paramName" value="siteTheme"></property>
+		</bean>
+		<!-- if the bean is added in intercepters then it will be called for all 
+			the url but if u want it to be called for specific url then use bellow tag -->
+		<!-- <bean class="com.karthik.SpringMVCDemo5.Interceptor.DayOfWeekInterceptor"></bean> -->
+		<mvc:interceptor>
+			<mvc:mapping path="/admissionForm.html" />
+			<bean class="com.karthik.SpringMVCDemo5.Interceptor.DayOfWeekInterceptor"></bean>
+		</mvc:interceptor>
+		<bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
+			<property name="paramName" value="sitelanguage"></property>
+		</bean>
+	</mvc:interceptors>
 	<bean id="viewResolver"
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix">
@@ -19,7 +35,20 @@
 			<value>.jsp</value>
 		</property>
 	</bean>
-	<bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
-	<property name="basename" value="/WEB-INF/ErrorMessages"></property>
+	<bean id="messageSource"
+		class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+		<property name="basename" value="/WEB-INF/studentMessage"></property>
+	</bean>
+	<bean id="localeResolver"
+		class="org.springframework.web.servlet.i18n.CookieLocaleResolver">
+
+	</bean>
+	<bean id="themeSource"
+		class="org.springframework.ui.context.support.ResourceBundleThemeSource">
+		<property name="basenamePrefix" value="theme-"></property>
+	</bean>
+	<bean id="themeResolver"
+		class="org.springframework.web.servlet.theme.CookieThemeResolver">
+		<property name="defaultThemeName" value="green"></property>
 	</bean>
 </beans>
