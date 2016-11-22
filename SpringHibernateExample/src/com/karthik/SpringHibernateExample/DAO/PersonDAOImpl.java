@@ -32,6 +32,4 @@ public class PersonDAOImpl implements PersonDAO {
 		session.close();
 		return personList;
 	}
-
-
 }

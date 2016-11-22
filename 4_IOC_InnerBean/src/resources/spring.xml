@@ -1,0 +1,14 @@
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+			"http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+			<beans>
+			<bean id="emp" class="com.Info.karthik.IOC_InnerBean.bean.Employee" scope="singleton">
+			<property name="name" value="karthik rao"></property>
+			<property name="address">
+			<bean class="com.Info.karthik.IOC_InnerBean.bean.Address">
+			<constructor-arg value="BTM2nd stage" index="0" type="String"></constructor-arg>
+			<constructor-arg value="Bengaluru" index="1" type="String"></constructor-arg>
+			<constructor-arg value="3456" index="2" type="int"></constructor-arg>
+			</bean>
+			</property>
+			</bean>
+			</beans>
