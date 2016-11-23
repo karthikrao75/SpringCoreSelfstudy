@@ -1,0 +1,19 @@
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+			"http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+			<beans>
+			<!-- to add required annotation checking -->
+			<bean class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor"></bean>
+			
+			<!--  <bean id="driverManager" class="com.Info.karthik.MandatorySetterFields.beans.DriverManager">
+			</bean>
+			
+			this wil give error as required fields have not be given
+			-->
+			
+			<bean id="driverManager" class="com.Info.karthik.MandatorySetterFields.beans.DriverManager">
+			<property name="driverClass" value="drive.class.mysql"></property>
+			<property name="url" value="jdbc:mysql:localhost"></property>
+			</bean>
+		
+			
+			</beans>
