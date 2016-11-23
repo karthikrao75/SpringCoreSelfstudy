@@ -1,7 +1,9 @@
 <!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
 			"http://www.springframework.org/dtd/spring-beans-2.0.dtd">
 			<beans>
-			<bean id="emp" class="com.Info.karthik.IOC_InnerBean.bean.Employee" scope="singleton">
+			<bean id="emp" class="com.Info.karthik.IOC_InnerBean.bean.Employee" scope="singleton" dependency-check="all">
+			<!-- dependency check is used to make setter field mandatory -->
+			<!-- none=default & not mandatory, simple= primitives are mandatory, objects=objects are mandatory, all=both mandatory -->
 			<property name="name" value="karthik rao"></property>
 			<property name="address">
 			<bean class="com.Info.karthik.IOC_InnerBean.bean.Address">
