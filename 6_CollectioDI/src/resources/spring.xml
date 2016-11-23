@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd 
+    http://www.springframework.org/schema/util
+    http://www.springframework.org/schema/util/spring-util-3.0.xsd">
+    <bean id="details" class="com.Info.karthik.CollectionDI.beans.Details" scope="singleton">
+   
+   <property name="fruits">
+   <util:list list-class="java.util.Vector">
+  			<value>apple</value>
+			<value>orange</value>
+			<value>green apple</value>
+   </util:list>
+   </property>
+   <property name="cricketers">
+   <util:set set-class="java.util.HashSet">
+   			<value>Dhoni</value>
+			<value>yuvi</value>
+			<value>Rahul</value>
+   </util:set>
+   </property>
+   
+   <property name="countries">
+   <util:map map-class="java.util.TreeMap">
+   			<entry key="India" value="Delhi"></entry>
+			<entry key="USA" value="washington"></entry>
+			<entry key="UK" value="londan"></entry>
+   </util:map>
+   </property>
+    </bean>
+    </beans>

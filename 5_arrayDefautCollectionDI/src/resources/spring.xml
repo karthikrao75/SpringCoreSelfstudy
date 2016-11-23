@@ -1,0 +1,51 @@
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+			"http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+			<beans>
+			<bean id="a1" class="com.Info.karthik.arrayDefaultCollectionDI.beans.Address">
+			<constructor-arg value="BTM2nd stage" index="0" type="String"></constructor-arg>
+			</bean>
+			<bean id="a2" class="com.Info.karthik.arrayDefaultCollectionDI.beans.Address">
+			<constructor-arg value="BTM2nd stage" index="0" type="String"></constructor-arg>
+			</bean>
+			<bean id="a3" class="com.Info.karthik.arrayDefaultCollectionDI.beans.Address">
+			<constructor-arg value="BTM2nd stage" index="0" type="String"></constructor-arg>
+			</bean>
+			
+			<bean id="details" class="com.Info.karthik.arrayDefaultCollectionDI.beans.Details" scope="singleton">
+			<property name="names">
+			<list>
+			<value>karthik</value>
+			<value>srikanth</value>
+			<value>ramesh</value>
+			</list>
+			</property>
+			<property name="address">
+			<list>
+			<ref bean="a1"/>
+			<ref bean="a2"/>
+			<ref bean="a3"/>
+			</list>
+			</property>
+			<property name="fruits">
+			<list>
+			<value>apple</value>
+			<value>orange</value>
+			<value>green apple</value>
+			</list>
+			</property>
+			<property name="cricketers">
+			<set>
+			<value>Dhoni</value>
+			<value>yuvi</value>
+			<value>Rahul</value>
+			</set>
+			</property>
+			<property name="countries">
+			<map>
+			<entry key="India" value="Delhi"></entry>
+			<entry key="USA" value="washington"></entry>
+			<entry key="UK" value="londan"></entry>
+			</map>
+			</property>
+			</bean>
+			</beans>
