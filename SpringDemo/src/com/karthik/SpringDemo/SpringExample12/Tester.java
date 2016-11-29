@@ -11,12 +11,11 @@ public class Tester {
 		// to use ApplicationListner and ContextEvent use
 		// ConfigurableApplicationContext interface
 		ConfigurableApplicationContext context = new ClassPathXmlApplicationContext("spring9.xml");
-
 		//context.start(); //start() will call refresh and then start event 
-		 context.refresh();//refresh() will only call refresh event
+		//context.refresh();//refresh() will only call refresh event
 		HelloWorld helloWorld = (HelloWorld) context.getBean("hello");
 		System.out.println(helloWorld.getMessage());
-		context.stop();
+		//context.stop();
 		context.close();
 
 	}

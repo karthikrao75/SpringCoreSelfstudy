@@ -8,5 +8,4 @@
 <bean id="customHandler" class="com.karthik.SpringDemo.SpringExample13.CustomEventHandler"></bean>
 <bean id="customPublisher" class="com.karthik.SpringDemo.SpringExample13.CustomEventPublisher"></bean>
 
-
 </beans>
