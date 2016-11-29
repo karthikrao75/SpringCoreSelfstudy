@@ -5,7 +5,7 @@
 	
 	</bean>
 
-		<bean id="pointA" class="com.karthik.SpringDemo.SpringExample4.Point">
+		<bean id="point" class="com.karthik.SpringDemo.SpringExample4.Point">
 		<property name="x" value="0"></property>
 		<property name="y" value="0"></property>
 	</bean>
