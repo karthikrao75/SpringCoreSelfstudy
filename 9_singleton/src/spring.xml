@@ -3,5 +3,5 @@
 			"http://www.springframework.org/dtd/spring-beans-2.0.dtd">
 			<!-- factory-method is used to create objects of singleton class -->
 			<beans>
-			<bean id="R1" class="Rest" factory-method="getInstance"></bean>
+			<bean id="R1" class="Rest" factory-method="getInstance" ></bean>
 			</beans>
